@@ -1,0 +1,13 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+[submodule "subrepos/fonts"]
+	path = subrepos/fonts
+	url = https://github.com/powerline/fonts.git
+[submodule "subrepos/tpm"]
+	path = subrepos/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "subrepos/fzf"]
+	path = subrepos/fzf
+	url = https://github.com/junegunn/fzf.git

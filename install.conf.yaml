@@ -1,0 +1,32 @@
+- clean: ['~']
+
+- link:
+    ~/.bash_aliases: .bash_aliases
+    ~/.bashrc: .bashrc
+    ~/.vimrc: .vimrc
+    ~/.screenrc: .screenrc
+    ~/.tmux.conf: .tmux.conf
+    ~/.config/:
+          create: true
+          glob: true
+          path: config/*
+          relink: true
+    ~/.local/bin:
+          create: true
+          path: local/bin
+          relink: true
+    ~/.tmux/plugins/tpm:
+          create: true
+          path: subrepos/tpm
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - ["stty -ixon", Disable flow control for terminal (Ctrl-S/Ctrl-Q keys)]
+  - ["bash packages.sh", Install some packages]
+  - ["curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", vim-plug for vim]
+  - [./subrepos/fonts/install.sh , Installing powerline fonts]
+  - [./subrepos/fzf/install , Installing command-line fuzzy finder]
+  -
+    command: "vim '+PlugInstall|qall'"
+    description: Installing vim plugins
+    stdin: True
