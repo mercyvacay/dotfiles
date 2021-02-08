@@ -8,7 +8,6 @@ set -x CLICOLOR true
 # set -x LC_CTYPE "en_US.UTF-8"
 
 set -x PATH $HOME/.local/bin $PATH
-set -x PATH $HOME/calibre/src $PATH
 
 # Set Vim as the default editor.
 set -x EDITOR /usr/bin/vim
