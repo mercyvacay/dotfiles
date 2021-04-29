@@ -11,10 +11,6 @@
           glob: true
           path: config/*
           relink: true
-    ~/.local/bin:
-          create: true
-          path: local/bin
-          relink: true
     ~/.tmux/plugins/tpm:
           create: true
           path: subrepos/tpm
